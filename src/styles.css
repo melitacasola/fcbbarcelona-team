@@ -1,1 +1,37 @@
-/* You can add global styles to this file, and also import other style files */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    html {
+      font-family: "fcb-bold", Arial, "Helvetica Neue", Helvetica, sans-serif;
+      /* font-weight: 400; */
+      color: #fff;
+      /* font-size: 1.8rem;
+      line-height: 2.2rem; */
+    }
+  }
+
+:root {
+    --blue: #007bff;
+    --gray-dark: #343a40;
+    --primary: #007bff;
+    --warning: #ffc107;
+    --blue-dark:rgba(2, 35, 109, .95);
+
+    --red-to-pink-to-purple-vertical-gradient: linear-gradient(180deg,
+            var(--orange-red) 0%,
+            var(--vivid-pink) 50%,
+            var(--electric-violet) 100%);
+
+    --red-to-pink-to-purple-horizontal-gradient: linear-gradient(90deg,
+            var(--orange-red) 0%,
+            var(--vivid-pink) 50%,
+            var(--electric-violet) 100%);
+
+    --pill-accent: var(--bright-blue);
+
+
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
