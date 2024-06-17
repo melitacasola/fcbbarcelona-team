@@ -1,11 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { Player } from '../../models/player.model';
+import { PlayerService } from '../../services/player.service';
 
-interface Card {
-  id: number;
-  title: string;
-  description: string;
-}
 
 @Component({
   selector: 'app-card-details',
@@ -15,17 +12,17 @@ interface Card {
 
 
 export class CardDetailsComponent implements OnInit {
-  card: Card | undefined;
 
-  cards: Card[] = [
-    { id: 1, title: 'Card 1', description: 'Description 1' },
-    { id: 2, title: 'Card 2', description: 'Description 2' },
-    { id: 3, title: 'Card 3', description: 'Description 3' }
-  ];
-  constructor(private route: ActivatedRoute) { }
+  player: Player | undefined;
+
+  private route= inject(ActivatedRoute)
+  private playerService= inject(PlayerService)
 
   ngOnInit(): void {
     const id = +this.route.snapshot.paramMap.get('id')!;
-    this.card = this.cards.find(card => card.id === id);
+    this.playerService.getPlayerById(id).subscribe(player => {
+      this.player = player;
+    });
   }
+  
 }
