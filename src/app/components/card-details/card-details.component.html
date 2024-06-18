@@ -4,7 +4,7 @@
         class="relative bg-gradient-to-br from-[#154284] to-[#181733] text-white fill-white text-center overflow-hidden">
 
         <span
-            class="absolute text-[30vw] italic font-[fcb-extra-bold] font-normal leading-[0.6] top-8 left-1/2 uppercase px-[3%] transition-opacity duration-500 bg-gradient-to-b from-[hsla(0,0%,93%,.2)] to-transparent bg-clip-text text-transparent transform -translate-x-[55%] translate-y-0">
+            class="absolute text-[30vw] italic font-normal leading-[0.6] top-8 left-1/2 uppercase px-[3%] transition-opacity duration-500 bg-gradient-to-b from-[hsla(0,0%,93%,.2)] to-transparent bg-clip-text text-transparent transform -translate-x-[55%] translate-y-0">
             {{ player.name }}
         </span>
 
@@ -46,10 +46,10 @@
                 </div>
                 <div class="w-2/2">
                     <div class="flex flex-col justify-end ">
-                        <img src="{{player.url2}}" alt="{{player.name }}" class="w-[450px] h-[530px]">
+                        <img src="{{player.url2}}" alt="{{player.name }}" class="w-[450px] h-[530px] z-20">
                     </div>
-                    <div class="text-white bg-black">
-                        <div class="text-sm">{{ player.position }}</div>
+                    <div class="text-white bg-black ">
+                        <div class="text-sm pt-4">{{ player.position }}</div>
 
                         <div class="flex flex-row justify-around text-2xl p-6">
                             <span class="">{{ player.shirtNumber }}</span>
