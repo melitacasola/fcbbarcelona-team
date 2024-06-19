@@ -1,6 +1,6 @@
 import { Component, OnInit, inject } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Player } from '../../models/player.model';
+import { IPlayer } from '../../models/player.model';
 import { PlayerService } from '../../services/player.service';
 
 
@@ -13,7 +13,7 @@ import { PlayerService } from '../../services/player.service';
 
 export class CardDetailsComponent implements OnInit {
 
-  player: Player | undefined;
+  player: IPlayer | undefined;
 
   private route= inject(ActivatedRoute)
   private playerService= inject(PlayerService)
@@ -24,5 +24,5 @@ export class CardDetailsComponent implements OnInit {
       this.player = player;
     });
   }
-  
+
 }

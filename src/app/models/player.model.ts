@@ -1,4 +1,7 @@
-export interface Player {
+import { IStat } from './stat.model';
+import { IHonour } from './honour.model';
+
+export interface IPlayer {
     playerId: number;
     name: string;
     position: string;
@@ -14,18 +17,8 @@ export interface Player {
     age: string;
     description: string;
     review: string;
-    honour: Honour[];
-    stats: Stat[];
+    honour: IHonour[];
+    stats: IStat[];
 }
 
-interface Honour {
-    name: string;
-    years: string;
-}
 
-export interface Stat {
-    name: string;
-    value: number;
-    description: string;
-    additionalInfo?: any;
-}

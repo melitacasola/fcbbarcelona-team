@@ -35,199 +35,46 @@
                 <h2 class="text-black gradient-text font-extrabold text-3xl mb-8 items-center">Porteros</h2>
 
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                  <div *ngFor="let player of goalkeepers" (click)="viewDetails(player.playerId)">
+                    <app-card [player]="player"></app-card>
+                  </div>
 
-                    <div *ngFor="let player of goalkeepers" (click)="viewDetails(player.playerId)"
-                        class="relative group w-[450px] h-[450px] cursor-pointer overflow-hidden ">
-
-                        <img class="w-full h-full object-cover" src="{{ player.url }}"
-                            alt="{{ player.name }}" />
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
-                        <div
-                            class="absolute bottom-0 left-0 right-0 px-4 transition-transform duration-300 group-hover:-translate-y-6 text-center">
-                            <h2 class="text-3xl font-extrabold text-white">{{ player.shirtNumber }} {{ player.name }}
-                            </h2>
-                            <p class="text-gray-300 text-xs font-extrabold mb-2 p-3">{{ player.position }}</p>
-                            <div class="border-[0.1px] border-gray-400 px-8 my-4 hidden group-hover:block "></div>
-                            <div class="flex flex-row justify-center">
-                                <ul class="flex w-full flex-row justify-evenly text-xs font-extrabold gap-8 items-center px-2">
-                                    <li class="text-white hidden group-hover:flex flex-col">
-                                        <span>Partidos</span>
-                                        <span class="text-3xl">{{ player.stats[0].value }}</span>
-                                    </li>
-                                    <li class="text-white hidden group-hover:flex flex-col ">
-                                        <span>Porteria a cero</span>
-                                        <span class="text-3xl">{{ player.stats[4].value }}</span>
-                                    </li>
-                                    <li class="text-white hidden group-hover:flex flex-col">
-                                        <span>Paradas</span>
-                                        <span class="text-3xl">{{ player.stats[1].value }}</span>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div>
-                                <ul class="flex flex-row justify-center text-xs font-extrabold gap-8 items-center px-2">
-                                    <li class="text-white hidden group-hover:flex flex-col">
-                                        <span>Temporada 2023/2024</span>
-                                        <span class="text-xl text-primary">{{ player.stats[0].value }}</span>
-                                    </li>
-                                    <li class="text-white hidden group-hover:flex flex-col ">
-                                        <span>Temporada 2023/2024</span>
-                                        <span class="text-xl text-primary">{{ player.stats[4].value }}</span>
-                                    </li>
-                                    <li class="text-white hidden group-hover:flex flex-col ">
-                                        <span>Temporada 2023/2024</span>
-                                        <span class="text-xl text-primary">{{ player.stats[1].value }}</span>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-
-                    </div>
                 </div>
             </div>
 
             <div id="defenders" class="flex flex-col items-center">
                 <h2 class="text-black gradient-text font-extrabold text-3xl my-8">Defensas</h2>
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 p-4">
-                    <div *ngFor="let player of defenders" (click)="viewDetails(player.playerId)"
-                        class="relative group w-[450px] h-[450px] cursor-pointer overflow-hidden">
-                        <img class="w-full h-full object-cover" src="{{ player.url }}" alt="{{ player.name }}" />
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
-                        <div
-                            class="absolute bottom-0 left-0 right-0 p-2 transition-transform duration-300 group-hover:-translate-y-6 text-center">
-                            <h2 class="text-3xl font-extrabold text-white">{{ player.shirtNumber }} {{ player.name }}</h2>
-                            <p class="text-gray-300 text-xs font-extrabold mb-2">{{ player.position }}</p>
-                            <div class="border-[0.1px] border-gray-400 mx-4 my-2 hidden group-hover:block"></div>
-                            <div class="flex flex-row justify-center">
-                                <ul class="flex w-full flex-row justify-evenly text-xs font-extrabold gap-4 items-center">
-                                    <li class="text-white hidden group-hover:flex flex-col">
-                                        <span>Partidos</span>
-                                        <span class="text-2xl">{{ player.stats[1].value }}</span>
-                                    </li>
-                                    <li class="text-white hidden group-hover:flex flex-col">
-                                        <span>Goles</span>
-                                        <span class="text-2xl">{{ player.stats[4].value }}</span>
-                                    </li>
-                                    <li class="text-white hidden group-hover:flex flex-col">
-                                        <span>Asistencias</span>
-                                        <span class="text-2xl">{{ player.stats[3].value }}</span>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="flex-row justify-center text-xs font-extrabold hidden group-hover:flex">
-                                <li class="text-white flex flex-col mx-2">
-                                    <span>Temporada 2023/2024</span>
-                                    <span class="text-xl text-primary">{{ player.stats[0].value }}</span>
-                                </li>
-                                <li class="text-white flex flex-col mx-2">
-                                    <span>Temporada 2023/2024</span>
-                                    <span class="text-xl text-primary">{{ player.stats[4].value }}</span>
-                                </li>
-                                <li class="text-white flex flex-col mx-2">
-                                    <span>Temporada 2023/2024</span>
-                                    <span class="text-xl text-primary">{{ player.stats[1].value }}</span>
-                                </li>
-                            </div>
-                        </div>
-                    </div>
+                  <div *ngFor="let player of defenders" (click)="viewDetails(player.playerId)">
+                    <app-card [player]="player"></app-card>
+                  </div>
+
                 </div>
             </div>
 
             <div id="midfielders" class="flex flex-col items-center">
                 <h2 class="text-black gradient-text font-extrabold text-3xl my-8">Centrocampistas</h2>
+
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 p-4">
-                    <div *ngFor="let player of midfielders" (click)="viewDetails(player.playerId)"
-                        class="relative group w-[450px] h-[450px] cursor-pointer overflow-hidden">
-                        <img class="w-full h-full object-cover" src="{{ player.url }}" alt="{{ player.name }}" />
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
-                        <div
-                            class="absolute bottom-0 left-0 right-0 p-2 transition-transform duration-300 group-hover:-translate-y-6 text-center">
-                            <h2 class="text-3xl font-extrabold text-white">{{ player.shirtNumber }} {{ player.name }}</h2>
-                            <p class="text-gray-300 text-xs font-extrabold mb-2">{{ player.position }}</p>
-                            <div class="border-[0.1px] border-gray-400 mx-4 my-2 hidden group-hover:block"></div>
-                            <div class="flex flex-row justify-center">
-                                <ul class="flex w-full flex-row justify-evenly text-xs font-extrabold gap-4 items-center">
-                                    <li class="text-white hidden group-hover:flex flex-col">
-                                        <span>Partidos</span>
-                                        <span class="text-2xl">{{ player.stats[1].value }}</span>
-                                    </li>
-                                    <li class="text-white hidden group-hover:flex flex-col">
-                                        <span>Goles</span>
-                                        <span class="text-2xl">{{ player.stats[4].value }}</span>
-                                    </li>
-                                    <li class="text-white hidden group-hover:flex flex-col">
-                                        <span>Asistencias</span>
-                                        <span class="text-2xl">{{ player.stats[3].value }}</span>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="flex-row justify-center text-xs font-extrabold hidden group-hover:flex">
-                                <li class="text-white flex flex-col mx-2">
-                                    <span>Temporada 2023/2024</span>
-                                    <span class="text-xl text-primary">{{ player.stats[0].value }}</span>
-                                </li>
-                                <li class="text-white flex flex-col mx-2">
-                                    <span>Temporada 2023/2024</span>
-                                    <span class="text-xl text-primary">{{ player.stats[4].value }}</span>
-                                </li>
-                                <li class="text-white flex flex-col mx-2">
-                                    <span>Temporada 2023/2024</span>
-                                    <span class="text-xl text-primary">{{ player.stats[1].value }}</span>
-                                </li>
-                            </div>
-                        </div>
-                    </div>
+                  <div *ngFor="let player of midfielders" (click)="viewDetails(player.playerId)">
+                    <app-card [player]="player"></app-card>
+                  </div>
+
+
                 </div>
             </div>
             <div id="forwards" class="flex flex-col items-center">
                 <h2 class="text-black gradient-text font-extrabold text-3xl my-8">Delanteros</h2>
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 p-4">
-                    <div *ngFor="let player of attackers" (click)="viewDetails(player.playerId)"
-                        class="relative group w-[450px] h-[450px] cursor-pointer overflow-hidden">
-                        <img class="w-full h-full object-cover" src="{{ player.url }}" alt="{{ player.name }}" />
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
-                        <div
-                            class="absolute bottom-0 left-0 right-0 p-2 transition-transform duration-300 group-hover:-translate-y-6 text-center">
-                            <h2 class="text-3xl font-extrabold text-white">{{ player.shirtNumber }} {{ player.name }}</h2>
-                            <p class="text-gray-300 text-xs font-extrabold mb-2">{{ player.position }}</p>
-                            <div class="border-[0.1px] border-gray-400 mx-4 my-2 hidden group-hover:block"></div>
-                            <div class="flex flex-row justify-center">
-                                <ul class="flex w-full flex-row justify-evenly text-xs font-extrabold gap-4 items-center">
-                                    <li class="text-white hidden group-hover:flex flex-col">
-                                        <span>Partidos</span>
-                                        <span class="text-2xl">{{ player.stats[1].value }}</span>
-                                    </li>
-                                    <li class="text-white hidden group-hover:flex flex-col">
-                                        <span>Goles</span>
-                                        <span class="text-2xl">{{ player.stats[4].value }}</span>
-                                    </li>
-                                    <li class="text-white hidden group-hover:flex flex-col">
-                                        <span>Asistencias</span>
-                                        <span class="text-2xl">{{ player.stats[3].value }}</span>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="flex-row justify-center text-xs font-extrabold hidden group-hover:flex">
-                                <li class="text-white flex flex-col mx-2">
-                                    <span>Temporada 2023/2024</span>
-                                    <span class="text-xl text-primary">{{ player.stats[0].value }}</span>
-                                </li>
-                                <li class="text-white flex flex-col mx-2">
-                                    <span>Temporada 2023/2024</span>
-                                    <span class="text-xl text-primary">{{ player.stats[4].value }}</span>
-                                </li>
-                                <li class="text-white flex flex-col mx-2">
-                                    <span>Temporada 2023/2024</span>
-                                    <span class="text-xl text-primary">{{ player.stats[1].value }}</span>
-                                </li>
-                            </div>
-                        </div>
-                    </div>
+                  <div *ngFor="let player of attackers" (click)="viewDetails(player.playerId)">
+                    <app-card [player]="player"></app-card>
+                  </div>
+
                 </div>
             </div>
             <div id="coaching" class="flex flex-col items-center">
                 <h2 class="text-black gradient-text font-extrabold text-3xl my-8">Cuerpo Técnico</h2>
-                
+
             </div>
         </article>
 

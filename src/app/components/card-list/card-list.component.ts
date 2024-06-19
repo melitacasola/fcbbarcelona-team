@@ -1,7 +1,8 @@
 import { Component, OnInit, inject } from '@angular/core';
 import { Router } from '@angular/router';
-import { Player } from '../../models/player.model';
+import { IPlayer } from '../../models/player.model';
 import { PlayerService } from '../../services/player.service';
+import { Player } from '../../models/Player.class';
 
 
 @Component({
@@ -14,7 +15,9 @@ import { PlayerService } from '../../services/player.service';
 export class CardListComponent implements OnInit {
   private playersService = inject(PlayerService);
   private router = inject(Router);
-  players: Player[] = [];
+
+  players: IPlayer[] = [];
+
   goalkeepers: any[] = [];
   attackers: any[] = [];
   midfielders: any[] = [];
@@ -22,13 +25,13 @@ export class CardListComponent implements OnInit {
 
   ngOnInit(): void {
     this.playersService.getPlayers().subscribe(data => {
-      console.log(data);
+
       this.players = data;
       this.goalkeepers = this.players.filter(player => player.position === 'Portero');
       this.attackers = this.players.filter(player => player.position === 'Atacante');
       this.midfielders = this.players.filter(player => player.position === 'Centrocampista');
       this.defenders = this.players.filter(player => player.position === 'Defensa');
-      
+
     });
   }
 
