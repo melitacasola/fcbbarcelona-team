@@ -1,8 +1,9 @@
 import { Component, OnInit, inject } from '@angular/core';
 import { Router } from '@angular/router';
-import { IPlayer } from '../../models/player.model';
-import { PlayerService } from '../../services/player.service';
-import { Player } from '../../models/Player.class';
+import { PlayerService } from '../../../../services/player.service';
+import { Player } from '../../../../models/Player.class';
+// import { IPlayer } from '../../models/player.model';
+
 
 
 @Component({
@@ -16,7 +17,7 @@ export class CardListComponent implements OnInit {
   private playersService = inject(PlayerService);
   private router = inject(Router);
 
-  players: IPlayer[] = [];
+  players: Player[] = [];
 
   goalkeepers: any[] = [];
   attackers: any[] = [];

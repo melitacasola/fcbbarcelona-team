@@ -4,7 +4,6 @@ import { TranslateService } from '@ngx-translate/core';
 @Component({
   selector: 'app-multi-language',
   templateUrl: './multi-language.component.html',
-  styleUrl: './multi-language.component.css'
 })
 export class MultiLanguageComponent {
 

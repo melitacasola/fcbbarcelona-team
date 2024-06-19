@@ -7,9 +7,7 @@ import { PlayerService } from './services/player.service';
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-  title = 'fca-boca-jr';
+  title = 'fca-Barcelona';
 
-  // constructor(private playersServices: PlayerService){}
 
-  // get getPlayer
 }

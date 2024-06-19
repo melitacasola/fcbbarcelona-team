@@ -2,9 +2,10 @@ import { Injectable, inject } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, map } from 'rxjs';
 import { Player } from '../models/Player.class';
+import { PlayerModule } from '../modules/player/player.module';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: PlayerModule
 })
 
 export class PlayerService {

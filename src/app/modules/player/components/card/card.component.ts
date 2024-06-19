@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
-import { IPlayer } from '../../models/player.model';
+import { IPlayer } from '../../../../models/player.model';
+
 
 @Component({
   selector: 'app-card',

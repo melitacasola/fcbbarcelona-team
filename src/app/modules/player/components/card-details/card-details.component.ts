@@ -1,7 +1,8 @@
 import { Component, OnInit, inject } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { IPlayer } from '../../models/player.model';
-import { PlayerService } from '../../services/player.service';
+import { PlayerService } from '../../../../services/player.service';
+import { IPlayer } from '../../../../models/player.model';
+
 
 
 @Component({
