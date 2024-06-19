@@ -9,30 +9,30 @@
     <div class="flex flex-row justify-center">
       <ul class="flex w-full flex-row justify-evenly text-xs font-extrabold gap-4 items-center">
         <li class="text-white hidden group-hover:flex flex-col">
-          <span>Partidos</span>
+          <span>{{ 'matches' | translate }}</span>
           <span class="text-2xl">{{ player.stats[1].value }}</span>
         </li>
         <li class="text-white hidden group-hover:flex flex-col">
-          <span>Goles</span>
+          <span>{{ 'goals' | translate }}</span>
           <span class="text-2xl">{{ player.stats[4].value }}</span>
         </li>
         <li class="text-white hidden group-hover:flex flex-col">
-          <span>Asistencias</span>
+          <span>{{ 'assists' | translate }}</span>
           <span class="text-2xl">{{ player.stats[3].value }}</span>
         </li>
       </ul>
     </div>
     <div class="flex-row justify-center text-xs font-extrabold hidden group-hover:flex">
       <li class="text-white flex flex-col mx-2">
-        <span>Temporada 2023/2024</span>
+        <span>{{ 'season2023_2024' | translate }}</span>
         <span class="text-xl text-primary">{{ player.stats[0].value }}</span>
       </li>
       <li class="text-white flex flex-col mx-2">
-        <span>Temporada 2023/2024</span>
+        <span>{{ 'season2023_2024' | translate }}</span>
         <span class="text-xl text-primary">{{ player.stats[4].value }}</span>
       </li>
       <li class="text-white flex flex-col mx-2">
-        <span>Temporada 2023/2024</span>
+        <span>{{ 'season2023_2024' | translate }}</span>
         <span class="text-xl text-primary">{{ player.stats[1].value }}</span>
       </li>
     </div>

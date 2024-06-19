@@ -5,7 +5,11 @@ import { CardDetailsComponent } from './components/card-details/card-details.com
 
 const routes: Routes = [
   { path: '', component: CardListComponent},
-  { path: 'details/:id', component: CardDetailsComponent }
+  { path: 'details/:id', component: CardDetailsComponent },
+  {
+    path: '**',
+    redirectTo: '',
+  },
 ];
 
 @NgModule({

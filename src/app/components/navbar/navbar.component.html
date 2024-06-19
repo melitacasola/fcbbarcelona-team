@@ -7,13 +7,13 @@
         <div class="uppercase flex flex-row gap-6  font-semibold text-[15px]">
           @for (item of [
           { title: '', link: '#' },
-          { title: 'primer equipo', link: '#' },
+          { title: 'firstTeam', link: '#' },
           { title: 'club', link: '#' },
-          { title: 'espai barca', link: '#' },
-          { title: 'socios', link: '#' },
-          { title: 'más equipos', link: '#' },
+          { title: 'espaiBarca', link: '#' },
+          { title: 'members', link: '#' },
+          { title: 'moreTeams', link: '#' },
           { title: '', link: '#' },
-          
+
         ]; track item.title) {
           <a
             class="text-[13px] flex flex-row justify-center items-center py-3 text-white"
@@ -21,8 +21,8 @@
             target="_blank"
             rel="noopener"
           >
-            <span>{{ item.title }}</span>
-           
+            <span>{{ item.title ? (item.title | translate) : '' }}</span>
+
           </a>
         }
         </div>
@@ -32,55 +32,57 @@
             <svg class="middle-navigation__icon--right middle-navigation__icon--ticket-full icon" viewBox="0 0 19 11" width="19" height="19" fill="#FFD700">
               <path d="M18.742 3.307A.705.705 0 0 0 19 2.743V1.375A1.37 1.37 0 0 0 17.643 0H6.107v1.719c0 .38-.303.687-.678.687a.683.683 0 0 1-.679-.687V0H1.357A1.37 1.37 0 0 0 0 1.375v1.368a.705.705 0 0 0 .258.564c.69.511 1.1 1.326 1.1 2.193s-.41 1.682-1.1 2.193A.705.705 0 0 0 0 8.257v1.368A1.37 1.37 0 0 0 1.357 11H4.75V9.281c0-.38.304-.687.679-.687.375 0 .678.307.678.687V11h11.536A1.37 1.37 0 0 0 19 9.625V8.257a.705.705 0 0 0-.258-.564 2.729 2.729 0 0 1-1.1-2.193c0-.867.41-1.682 1.1-2.193zM6.107 6.758c0 .38-.304.688-.678.688a.683.683 0 0 1-.679-.688V4.242c0-.38.304-.688.679-.688.374 0 .678.308.678.688v2.516z"></path>
           </svg>
-          <p>entradas y museos</p>
+          <p>{{ 'ticketsAndMuseums' | translate }}</p>
           </div>
           <div class="flex flex-row px-4 gap-1">
             <svg class="middle-navigation__icon--right middle-navigation__icon--uniform icon" viewBox="0 0 14 14" width="18" height="18" fill="#FFD700">
               <path d="M8.741.14 8.528.11a10.685 10.685 0 0 0-3.054 0l-.212.03 1.736 2.004L8.741.14ZM1.35 2.206 0 5.239l2.295.7.374-.8-.795-3.858a2.87 2.87 0 0 0-.524.925Zm10.748-.953-.789 3.836.398.85 2.294-.7-1.34-3.012a2.91 2.91 0 0 0-.562-.974h-.001Z"></path>
               <path d="m9.36.229 1.66.237c.005.003.29.099.636.36l-.874 4.244v.043c0 .005-.005.01-.005.015L11.02 14H3.013l.216-8.873a.256.256 0 0 0-.06-.17L2.32.844c.35-.27.641-.37.636-.37L4.65.227l2.153 2.483a.262.262 0 0 0 .396 0L9.36.23Z"></path>
           </svg>
-            <p>tiendas</p>
+            <p>{{ 'stores' | translate }}</p>
           </div>
             <div class="flex flex-row px-4 gap-1">
               <svg class="middle-navigation__icon--right middle-navigation__icon--video-full icon" viewBox="0 0 88 67.69" width="18" height="18" fill="#FFD700">
                 <path d="M82.92 0H5.08A5.07 5.07 0 0 0 0 5.08v44a5.07 5.07 0 0 0 5.08 5.07h77.84A5.07 5.07 0 0 0 88 49.08v-44A5.07 5.07 0 0 0 82.92 0ZM57.11 27.81 35.19 40.45a.88.88 0 0 1-1.34-.72V14.45a.89.89 0 0 1 1.34-.73l21.92 12.64a.83.83 0 0 1 0 1.45ZM16.92 67.69h54.16v-6.77H16.92Z" style="fill-rule:evenodd"></path>
               </svg>
-              <p>barça one</p>
+              <p>{{'barcaOne' | translate}} </p>
             </div>
 
         </div>
+        <app-multi-language/>
     </div>
 
 
-    
+
 
 
     <div class="flex flex-row justify-around px8">
         <nav class="bg-gradient-to-r from-warning to-blues flex flex-row justify-around items-center px-8 ">
             @for (item of [
-          { navBar: '', link: '#' },
-          { navBar: 'Actualidad', link: '#' },
-          { navBar: 'Calendario', link: '#' },
-          { navBar: 'Entradas', link: '#' },
-          { navBar: 'Resultados', link: '#' },
-          { navBar: 'Clasificación', link: '#' },
-          { navBar: 'Jugadores', link: '/' },
-          { navBar: 'Fotos', link: '#' },
-          { navBar: 'Palmarés', link: '#' },
-          { navBar: '', link: '#' },
-          
+            { navBar: '', link: '#' },
+            { navBar: 'currentEvents', link: '#' },
+            { navBar: 'schedule', link: '#' },
+            { navBar: 'tickets', link: '#' },
+            { navBar: 'results', link: '#' },
+            { navBar: 'standings', link: '#' },
+            { navBar: 'players', link: '/' },
+            { navBar: 'photos', link: '#' },
+            { navBar: 'trophies', link: '#' },
+            { navBar: '', link: '#' }
+
         ]; track item.navBar) {
           <a
             class="text-[13px] flex flex-row justify-center items-center py-3 text-white"
             [href]="item.link"
-            
+
             rel="noopener"
           >
-            <span>{{ item.navBar }}</span>
-           
+            <span>{{ item.navBar ? (item.navBar | translate) : '' }}</span>
+
           </a>
         }
         </nav>
+
     </div>
 
 

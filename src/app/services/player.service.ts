@@ -11,7 +11,7 @@ export class PlayerService {
 
   private playersUrl = 'assets/players.json';
 
-  private http= inject(HttpClient)
+  private http= inject(HttpClient);
 
   getPlayers(): Observable<Player[]> {
     return this.http.get<{ playerInfo: Player[] }>(this.playersUrl).pipe(

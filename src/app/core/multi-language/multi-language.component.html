@@ -1,0 +1,14 @@
+<section>
+  <div class="flex justify-end mr-4">
+    <div class="flex" *ngFor="let language of languages">
+      <button
+        class="bg-none border-none cursor-pointer focus:border-b-2 focus:border-black"
+        (click)="getLanguage(language.value)">
+        <img
+          class="w-[35px]"
+          alt="{{ language.label }}"
+          src="{{ language.icon }}" />
+      </button>
+    </div>
+  </div>
+</section>
