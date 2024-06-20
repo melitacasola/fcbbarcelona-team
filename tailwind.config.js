@@ -9,7 +9,7 @@ module.exports = {
         'custom-lg': '840px',
       },
       fontFamily: {
-        'sans': ['"fcb-bold"', 'Arial', '"Helvetica Neue"', 'Helvetica', 'sans-serif'],
+        '"fcb-bold"': ['Arial', '"Helvetica Neue"', 'Helvetica', 'sans-serif'],
       },
       fontSize: {
         'base': '1.8rem',
