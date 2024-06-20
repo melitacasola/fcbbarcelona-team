@@ -1,10 +1,14 @@
-<div class="relative group w-[450px] h-[450px] cursor-pointer overflow-hidden">
-  <img class="w-full h-full object-cover" src="{{ player.url }}" alt="{{ player.name }}" />
+<div class="relative group w-full h-full md:w-[450px] md:h-[450px] cursor-pointer overflow-hidden">
+  <img class="md:w-full md:h-full object-cover" src="{{ player.url }}" alt="{{ player.name }}" />
   <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
   <div
     class="absolute bottom-0 left-0 right-0 p-2 transition-transform duration-300 group-hover:-translate-y-6 text-center">
-    <h2 class="text-3xl font-extrabold text-white">{{ player.shirtNumber }} {{ player.name }}</h2>
-    <p class="text-gray-300 text-xs font-extrabold mb-2">{{ player.position }}</p>
+    <span
+      class="absolute text-[9vw] italic font-normal leading-[0.6] top-8 left-1/2 uppercase px-[3%] transition-opacity duration-500 bg-gradient-to-b from-[hsla(0,0%,93%,.2)] to-transparent bg-clip-text text-transparent transform -translate-x-[55%] -translate-y-20">
+      {{ player.name }}
+    </span>
+    <h2 class="text-3xl font-fcb font-extrabold text-white">{{ player.shirtNumber }} {{ player.name }}</h2>
+    <p class="text-gray-300 text-xs font-fcb font-extrabold mb-2">{{ player.position }}</p>
     <div class="border-[0.1px] border-gray-400 mx-4 my-2 hidden group-hover:block"></div>
     <div class="flex flex-row justify-center">
       <ul class="flex w-full flex-row justify-evenly text-xs font-extrabold gap-4 items-center">
