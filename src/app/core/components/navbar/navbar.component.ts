@@ -6,5 +6,19 @@ import { Component } from '@angular/core';
   styleUrl: './navbar.component.css'
 })
 export class NavbarComponent {
+  isMobileMenuOpen = false;
 
+  navItems = [
+    { title: '', link: '#' },
+    { title: 'firstTeam', link: '#' },
+    { title: 'club', link: '#' },
+    { title: 'espaiBarca', link: '#' },
+    { title: 'members', link: '#' },
+    { title: 'moreTeams', link: '#' },
+    { title: '', link: '#' }
+  ];
+
+  toggleMobileMenu() {
+    this.isMobileMenuOpen = !this.isMobileMenuOpen;
+  }
 }

@@ -9,7 +9,13 @@ module.exports = {
         'custom-lg': '840px',
       },
       fontFamily: {
-        '"fcb-bold"': ['Arial', '"Helvetica Neue"', 'Helvetica', 'sans-serif'],
+        'fcb-bold': ['"FC Barcelona Bold"', 'Arial', '"Helvetica Neue"', 'Helvetica', 'sans-serif'],
+        'fcb': ['"FC Barcelona Extrabold"', 'Arial', '"Helvetica Neue"', 'Helvetica', 'sans-serif'],
+      },
+      fontWeight: {
+        'normal': 400,
+        'bold': 700,
+        'extrabold': 800,
       },
       fontSize: {
         'base': '1.8rem',
