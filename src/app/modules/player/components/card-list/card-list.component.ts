@@ -2,8 +2,6 @@ import { Component, OnInit, inject } from '@angular/core';
 import { Router } from '@angular/router';
 import { PlayerService } from '../../../../services/player.service';
 import { Player } from '../../../../models/Player.class';
-// import { IPlayer } from '../../models/player.model';
-
 
 
 @Component({

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { environment } from '../../../../environments/environment.development';
 
 @Component({
   selector: 'app-navbar',
@@ -6,6 +7,8 @@ import { Component } from '@angular/core';
   styleUrl: './navbar.component.css'
 })
 export class NavbarComponent {
+
+  baser = environment.apiUrl;
   isMobileMenuOpen = false;
 
   navItems = [
